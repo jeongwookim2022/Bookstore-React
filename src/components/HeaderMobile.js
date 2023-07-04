@@ -70,9 +70,11 @@ function HeaderMobileContent() {
         </box>
         <box>
           <Link
-            // to="/search"
+            to="/search"
             onClick={() => {
-              window.location.replace("/search");
+              // window.location.replace("/search");
+              $(".open-links").css("transform", `translateX(-100%)`);
+              togglenNav();
             }}
             className="link"
           >

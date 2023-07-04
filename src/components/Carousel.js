@@ -18,7 +18,7 @@ function CarouselMain() {
           className="d-block w-100"
           src="https://www.hive.co.uk/imagecache/getimage?url=/Content/StoreFront/assets/images/Banners/0723Language.jpg&width=960&padding=false"
           alt="First slide"
-          style={{ maxHeight: "400px" }}
+          style={{ maxHeight: "370px", overflow: "fit" }}
         />
       </Carousel.Item>
       <Carousel.Item>

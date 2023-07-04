@@ -1,13 +1,5 @@
-import {
-  faBook,
-  faBookOpen,
-  faCircleUser,
-} from "@fortawesome/free-solid-svg-icons";
 import { HeaderMobile, HeaderPC } from "../styles/HeaderStyles";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useMediaQuery } from "react-responsive";
-import { useState } from "react";
-import { Link } from "react-router-dom";
 import HeaderMobileContent from "./HeaderMobile";
 
 function Header() {

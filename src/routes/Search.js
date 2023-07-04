@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import $ from "jquery";
 import Loading from "../components/Loading";
 import { MainContainer } from "../styles/SearchStyles";
+import Footer from "../components/Footer";
 
 const Search = ({ title }) => {
   const [query, setQuery] = useState("");
@@ -45,7 +46,6 @@ const Search = ({ title }) => {
   }
   return (
     <MainContainer className="contents mt-5">
-      {/* <h1>Search Books</h1> */}
       <form onSubmit={onSubmit}>
         <input
           type="text"
@@ -58,13 +58,14 @@ const Search = ({ title }) => {
         <button
           onClick={() => {
             $(".documents").html("");
+
             setIsLoading(true);
           }}
         >
           Search
         </button>
       </form>
-      <div className="documents">
+      <div className="documents container">
         {documents.map((d) => (
           <div className="box">
             <img
@@ -88,6 +89,7 @@ const Search = ({ title }) => {
           Next
         </button>
       </div>
+      <Footer />
     </MainContainer>
   );
 };
