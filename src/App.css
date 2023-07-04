@@ -1,3 +1,42 @@
+/*  */
+.documents {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.box {
+  border: 1px solid gray;
+  margin: 10px;
+  padding: 10px 5px;
+  border-radius: 10px;
+  border-bottom: 3px solid gray;
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+input[type="text"] {
+  padding: 2px;
+  margin: 10px 5px 10px 0px;
+}
+
+button {
+  background-color: rgb(88, 61, 188);
+  color: white;
+  border: none;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+button:disabled {
+  background-color: gray;
+}
+/*  */
 .App {
   text-align: center;
 }
