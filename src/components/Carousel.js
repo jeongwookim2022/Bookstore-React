@@ -4,21 +4,25 @@ import Carousel from "react-bootstrap/Carousel";
 function CarouselMain() {
   const [index, setIndex] = useState(0);
 
-  const handleSelect = (selectedIndex) => {
-    setIndex(selectedIndex);
-  };
+  // const handleSelect = (selectedIndex) => {
+  //   setIndex(selectedIndex);
+  // };
 
   return (
     <Carousel
       className="carousel-group"
-      style={{ borderBottom: "5px solid yellowgreen" }}
+      style={{
+        borderBottom: "5px solid yellowgreen",
+        marginLeft: "100px",
+        marginRight: "100px",
+      }}
     >
       <Carousel.Item>
         <img
           className="d-block w-100"
           src="https://www.hive.co.uk/imagecache/getimage?url=/Content/StoreFront/assets/images/Banners/0723Language.jpg&width=960&padding=false"
           alt="First slide"
-          style={{ maxHeight: "370px", overflow: "fit" }}
+          style={{ maxHeight: "400px" }}
         />
       </Carousel.Item>
       <Carousel.Item>
