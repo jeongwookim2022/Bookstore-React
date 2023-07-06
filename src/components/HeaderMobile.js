@@ -46,7 +46,7 @@ function HeaderMobileContent() {
           </Link>
         </div>
         <div>
-          <Link to="/signIn" className="link">
+          <Link to="/signup" className="link">
             <FontAwesomeIcon icon={faCircleUser} className="icon" />
           </Link>
         </div>

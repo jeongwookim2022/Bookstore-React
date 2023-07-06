@@ -36,8 +36,20 @@ function HeaderPCContent() {
               setIsSearch(true);
             }}
           />
-          <button>Sign Up</button>
-          <button>Sign In</button>
+          <button
+            onClick={() => {
+              navigate("/signup");
+            }}
+          >
+            Sign Up
+          </button>
+          <button
+            onClick={() => {
+              navigate("/signin");
+            }}
+          >
+            Sign In
+          </button>
         </div>
       </div>
       <BorderBottom />

@@ -1,6 +1,6 @@
 dd {
   border-radius: 10px;
-
   border-top: 5px solid green;
-  color: burlywood;
+  /* color: black */
+  font-weight: 100;
 }
