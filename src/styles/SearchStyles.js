@@ -5,6 +5,7 @@ export const MainContainer = styled.div`
 
   .documents {
     display: grid;
+    justify-content: center;
 
     @media (max-width: 800px) {
       grid-template-columns: repeat(4, 1fr);

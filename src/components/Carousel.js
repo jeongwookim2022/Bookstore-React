@@ -2,19 +2,11 @@ import { useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
 
 function CarouselMain() {
-  const [index, setIndex] = useState(0);
-
-  // const handleSelect = (selectedIndex) => {
-  //   setIndex(selectedIndex);
-  // };
-
   return (
     <Carousel
       className="carousel-group"
       style={{
         borderBottom: "5px solid yellowgreen",
-        marginLeft: "100px",
-        marginRight: "100px",
       }}
     >
       <Carousel.Item>

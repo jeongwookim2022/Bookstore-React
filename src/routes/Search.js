@@ -70,11 +70,14 @@ const Search = ({ title }) => {
           <div className="box">
             <img
               src={
-                d.thumbnail ? d.thumbnail : "http://via.placeholder.com/120X150"
+                d.thumbnail ? d.thumbnail : "http://via.placeholder.com/120X174"
               }
               alt=""
             />
             <div className="ellipsis">{d.title}</div>
+            <div>{`￦${d.price
+              .toString()
+              .replace(/(\d)(?=(?:\d{3})+(?!\d))/g, "$1,")}`}</div>
           </div>
         ))}
       </div>
@@ -93,5 +96,16 @@ const Search = ({ title }) => {
     </MainContainer>
   );
 };
-
 export default Search;
+
+// BOOKS API
+const REST_API_KEY = "dc8d40f2136deeecad5055925f2695db";
+const result = axios.create({
+  baseURL: "https://dapi.kakao.com",
+  headers: {
+    Authorization: `KakaoAK ${REST_API_KEY}`,
+  },
+});
+export const SearchAPI = (params) => {
+  return result.get("/v3/search/book", { params });
+};

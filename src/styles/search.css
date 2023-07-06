@@ -3,4 +3,11 @@ dd {
   border-top: 5px solid green;
   /* color: black */
   font-weight: 100;
+  justify-content: center;
+  text-align: right;
+  flex-direction: row;
+  align-items: start;
+  display: inline-block;
+  box-sizing: border-box;
+  vertical-align: middle;
 }

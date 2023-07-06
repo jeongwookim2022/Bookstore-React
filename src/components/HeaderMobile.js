@@ -53,22 +53,22 @@ function HeaderMobileContent() {
       </div>
       {/* OPEN NAVs */}
       <div className="open-links">
-        <box>
+        <p>
           <Link to="" className="link">
             BesteSeller
           </Link>
-        </box>
-        <box>
+        </p>
+        <p>
           <Link to="" className="link">
             Category
           </Link>
-        </box>
-        <box>
+        </p>
+        <p>
           <Link to="" className="link">
             Wish List
           </Link>
-        </box>
-        <box>
+        </p>
+        <p>
           <Link
             to="/search"
             onClick={() => {
@@ -80,7 +80,7 @@ function HeaderMobileContent() {
           >
             Search
           </Link>
-        </box>
+        </p>
       </div>
     </>
   );

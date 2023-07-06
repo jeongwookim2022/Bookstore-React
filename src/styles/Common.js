@@ -12,3 +12,6 @@ export const BorderTop = styled.div`
 export const BorderBottom = styled.div`
   border-bottom: 5px solid yellowgreen;
 `;
+export const BorderBottomG = styled.div`
+  border-bottom: 2px solid green;
+`;

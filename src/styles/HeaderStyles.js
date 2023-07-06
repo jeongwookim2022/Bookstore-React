@@ -5,7 +5,7 @@ export const HeaderPC = styled.header`
     div {
       display: flex;
       div {
-        width: 50%;
+        width: 60%;
 
         .viking {
           padding: 20px;
@@ -30,7 +30,7 @@ export const HeaderPC = styled.header`
         color: green;
       }
       .search-sign-up-in {
-        width: 50%;
+        width: 40%;
         justify-content: right;
         align-items: center;
         margin-right: 100px;
@@ -106,7 +106,7 @@ export const HeaderMobile = styled.header`
     transition: all 0.5s;
     border-bottom: 5px solid brown;
     box-sizing: border-box;
-    box {
+    p {
       margin: auto;
     }
     .link {
