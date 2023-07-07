@@ -8,13 +8,27 @@ import Footer from "../components/Footer";
 const Search = ({ title }) => {
   const [query, setQuery] = useState("");
   const [page, setPage] = useState(1);
+  const [sort, setSort] = useState("accuracy");
   const [last, setLast] = useState(1);
   const [documents, setDocuments] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [showNP, setShowNP] = useState(false);
+  const [showAccLat, setShowAccLat] = useState(false);
+
+  const notClicked = {
+    "background-color": "white",
+    color: "brown",
+    border: "1px solid brown",
+  };
+  const clicked = {
+    "background-color": "brown",
+    color: "white",
+    border: "1px solid brown",
+  };
 
   const callAPI = async () => {
     if (query.length > 0) {
-      const url = `https://dapi.kakao.com/v3/search/book?target=title&query=${query}&page=${page}`;
+      const url = `https://dapi.kakao.com/v3/search/book?target=title&query=${query}&page=${page}&sort=${sort}`;
       const config = {
         headers: "Authorization: KakaoAK dc8d40f2136deeecad5055925f2695db",
       };
@@ -25,6 +39,9 @@ const Search = ({ title }) => {
       setDocuments(result.data.documents);
       const total = result.data.meta.pageable_count;
       setLast(Math.ceil(total / 10));
+
+      setShowAccLat(true);
+      setShowNP(true);
     } else {
       setDocuments([]);
     }
@@ -33,10 +50,9 @@ const Search = ({ title }) => {
   useEffect(() => {
     callAPI();
     setIsLoading(false);
-  }, [page, isLoading]);
+  }, [page, isLoading, sort]);
 
-  const onSubmit = (e) => {
-    e.preventDefault();
+  const onSubmit = () => {
     callAPI();
     setPage(1);
   };
@@ -48,23 +64,54 @@ const Search = ({ title }) => {
     <MainContainer className="contents mt-5">
       <form onSubmit={onSubmit}>
         <input
+          className="container"
           type="text"
           placeholder="Search books"
           value={query}
           onChange={(e) => {
+            e.preventDefault();
             setQuery(e.target.value);
           }}
         />
         <button
-          onClick={() => {
-            $(".documents").html("");
-
+          onClick={(e) => {
+            e.preventDefault();
             setIsLoading(true);
+            $(".documents").html("");
           }}
         >
           Search
         </button>
       </form>
+      {showAccLat && (
+        <div className="accuracy-latest-btns container">
+          <button
+            onClick={() => {
+              setSort("accuracy");
+              setIsLoading(true);
+
+              $(".accuracy").css(clicked);
+              $(".latest").css(notClicked);
+            }}
+            className="accuracy"
+          >
+            Accuracy
+          </button>
+          <button
+            onClick={() => {
+              setSort("latest");
+              setIsLoading(true);
+
+              $(".latest").css(clicked);
+              $(".accuracy").css(notClicked);
+            }}
+            className="latest"
+          >
+            Latest
+          </button>
+        </div>
+      )}
+
       <div className="documents container">
         {documents.map((d) => (
           <div className="box">
@@ -81,17 +128,32 @@ const Search = ({ title }) => {
           </div>
         ))}
       </div>
-      <div className="next-prev-buttons">
-        <button onClick={() => setPage(page - 1)} disabled={page === 1}>
-          Prev
-        </button>
-        <span style={{ margin: "10px" }}>
-          {page}/{last}
-        </span>
-        <button onClick={() => setPage(page + 1)} disabled={page === last}>
-          Next
-        </button>
-      </div>
+      {showNP && (
+        <div className="next-prev-buttons">
+          <button
+            onClick={() => {
+              setPage(page - 1);
+              setIsLoading(true);
+            }}
+            disabled={page === 1}
+          >
+            Prev
+          </button>
+          <span style={{ margin: "10px" }}>
+            {page}/{last}
+          </span>
+          <button
+            onClick={() => {
+              setPage(page + 1);
+              setIsLoading(true);
+            }}
+            disabled={page === last}
+          >
+            Next
+          </button>
+        </div>
+      )}
+
       <Footer />
     </MainContainer>
   );

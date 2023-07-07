@@ -1,16 +1,19 @@
-import { BooksContents } from "../styles/BookStyles";
-
 function Books({ image, title, author }) {
   return (
-    <BooksContents>
-      <div>
-        <img src={image} />
+    <>
+      <div className="book-wrapper">
+        <div className="book-img-box">
+          <img
+            src={image ? image : "http://via.placeholder.com/120X174"}
+            alt=""
+          />
+        </div>
+        <div className="title-author">
+          <h1>{title}</h1>
+          <h3>{author}</h3>
+        </div>
       </div>
-      <div className="title-author">
-        <h1>{title}</h1>
-        <h3>{author}</h3>
-      </div>
-    </BooksContents>
+    </>
   );
 }
 

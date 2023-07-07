@@ -36,29 +36,18 @@ export const MainContainer = styled.div`
 
   input[type="text"] {
     padding: 2px;
-    margin: 10px 5px 10px 0px;
-  }
-
-  button {
-    background-color: rgb(88, 61, 188);
-    color: white;
-    border: none;
-    padding: 5px;
-    border-radius: 10px;
-  }
-
-  button:disabled {
-    background-color: gray;
+    margin: 10px 5px 0px 0px;
   }
 
   // ////////////////////////
 
   form {
     margin-top: 60px;
-    margin-bottom: 40px;
     button {
       border-radius: 10px;
       padding: 7px;
+      color: white;
+      border: 1px solid green;
       background-color: green;
     }
     input {
@@ -66,10 +55,33 @@ export const MainContainer = styled.div`
       padding: 3px;
     }
   }
+  .accuracy-latest-btns {
+    margin-top: 11px;
+    button {
+      border-radius: 3px;
+      padding: 3px 9px 3px 9px;
+      &:first-child {
+        margin-right: 12px;
+
+        color: white;
+        background-color: brown;
+        border: 1px solid brown;
+      }
+      &:last-child {
+        margin-left: 10px;
+
+        border: 1px solid brown;
+        color: brown;
+        background-color: white;
+      }
+    }
+  }
 
   .next-prev-buttons {
     button {
-      background-color: brown;
+      background-color: yellowgreen;
+      color: white;
+      border: 2px solid yellowgreen;
       padding: 3px;
       padding-left: 7px;
       padding-right: 7px;
@@ -77,6 +89,8 @@ export const MainContainer = styled.div`
 
       margin-top: 28px;
       margin-bottom: -10px;
+
+      cursor: pointer;
     }
   }
 `;

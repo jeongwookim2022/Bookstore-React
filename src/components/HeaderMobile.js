@@ -72,7 +72,6 @@ function HeaderMobileContent() {
           <Link
             to="/search"
             onClick={() => {
-              // window.location.replace("/search");
               $(".open-links").css("transform", `translateX(-100%)`);
               togglenNav();
             }}

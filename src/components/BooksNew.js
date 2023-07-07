@@ -9,7 +9,7 @@ import {
   BooksContents,
 } from "../styles/BookStyles";
 
-function BestSeller() {
+function BooksNew() {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
@@ -18,8 +18,8 @@ function BestSeller() {
 
   const findBooks = async () => {
     const params = {
-      query: "scandinavian",
-      sort: "",
+      query: "2023 year",
+      sort: "latest",
       size: "8",
       target: "",
     };
@@ -34,7 +34,7 @@ function BestSeller() {
     <>
       <BookSection className="container">
         <TitleEach>
-          <h2>BestSellers</h2>
+          <h2>New Arrivals</h2>
           <h1>
             <span className="plus-text">+</span>
           </h1>
@@ -57,4 +57,4 @@ function BestSeller() {
   );
 }
 
-export default BestSeller;
+export default BooksNew;

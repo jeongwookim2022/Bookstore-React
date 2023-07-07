@@ -1,9 +1,14 @@
+import { css } from "jquery";
 import { styled } from "styled-components";
 
 export const BookSection = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+
+  .plus-text {
+    cursor: pointer;
+  }
 `;
 
 export const TitleEach = styled.div`
@@ -132,8 +137,8 @@ export const BookTodayWrapper = styled.div`
       height: 45%;
       margin-bottom: 15px;
 
-      font-size: 15.6px;
       text-align: left;
+      font-size: 15.3px;
     }
     .review {
       height: 55%;
@@ -164,8 +169,77 @@ export const BookTodayWrapper = styled.div`
         margin-top: 15px;
       }
       .review {
-        margin-top: 15px;
+        margin-top: 0px;
       }
     }
+  }
+`;
+
+export const BookGenres = styled.div`
+  display: flex;
+  margin-left: 8%;
+  button {
+    margin-top: 20px;
+    margin-right: 15px;
+
+    color: brown;
+    background-color: white;
+    border: 3px solid yellowgreen;
+    border-radius: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    box-sizing: border-box;
+    &:first-child {
+      color: rgb(244, 229, 209);
+      background-color: green;
+      border: 3px solid green;
+    }
+  }
+
+  @media (max-width: 780px) {
+    justify-content: center;
+    button {
+      padding: 2px;
+      padding-right: 5px;
+      padding-left: 5px;
+    }
+  }
+`;
+
+export const BookRecommendationBox = styled.div`
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 40px;
+
+  .book-wrapper {
+    width: 90%;
+    height: 100%;
+      margin-top: 20px;
+
+    .book-img-box {
+    border-radius: 10px;
+    background-color: blanchedalmond;
+
+    cursor: pointer;
+
+    img {
+      wdidth: 153px;
+      height: 207px;
+      padding: 15px;
+    }
+  }
+  .title-author{
+    h1 {
+      font-size: 16px;
+    }
+    h3 {
+      font-size: 13px;
+      color: gray;
+    }
+}
+
+  @media (max-width: 780px) {
+    grid-template-columns: 1fr;
   }
 `;

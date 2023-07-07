@@ -8,10 +8,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 function BookToday() {
   return (
     <>
-      <BookSection className="container">
+      <BookSection className="container mt-4">
         <TitleEach>
           <h2>Book of Today</h2>
-          <h1>+</h1>
+          <h1>
+            <span className="plus-text">+</span>
+          </h1>
         </TitleEach>
       </BookSection>
       <BorderBottomG className="container" />
