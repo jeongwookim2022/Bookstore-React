@@ -7,6 +7,9 @@ import BestSeller from "../components/BestSeller";
 import BookToday from "../components/BookToday";
 import BooksNew from "../components/BooksNew";
 import BookRecommendation from "../components/BookRecommend";
+import BooksLanguage from "../components/BooksLanguage";
+import BooksDepressed from "../components/BooksDepressed";
+import MovieQuote from "../components/MovieQuote";
 
 function MainPage() {
   const isPC = useMediaQuery({
@@ -21,6 +24,9 @@ function MainPage() {
       <BestSeller />
       <BooksNew />
       <BookRecommendation />
+      <BooksLanguage />
+      <BooksDepressed />
+      <MovieQuote />
       <Footer />
     </>
   );

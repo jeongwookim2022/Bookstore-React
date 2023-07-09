@@ -5,7 +5,8 @@ import Loading from "../components/Loading";
 import { MainContainer } from "../styles/SearchStyles";
 import Footer from "../components/Footer";
 
-const Search = ({ title }) => {
+// const Search = () => {
+function Search() {
   const [query, setQuery] = useState("");
   const [page, setPage] = useState(1);
   const [sort, setSort] = useState("accuracy");
@@ -16,12 +17,12 @@ const Search = ({ title }) => {
   const [showAccLat, setShowAccLat] = useState(false);
 
   const notClicked = {
-    "background-color": "white",
+    background: "white",
     color: "brown",
     border: "1px solid brown",
   };
   const clicked = {
-    "background-color": "brown",
+    background: "brown",
     color: "white",
     border: "1px solid brown",
   };
@@ -32,6 +33,7 @@ const Search = ({ title }) => {
       const config = {
         headers: "Authorization: KakaoAK dc8d40f2136deeecad5055925f2695db",
       };
+
       const result = await axios(url, config);
 
       console.log(result.data);
@@ -50,7 +52,7 @@ const Search = ({ title }) => {
   useEffect(() => {
     callAPI();
     setIsLoading(false);
-  }, [page, isLoading, sort]);
+  }, [isLoading, sort]);
 
   const onSubmit = () => {
     callAPI();
@@ -69,13 +71,13 @@ const Search = ({ title }) => {
           placeholder="Search books"
           value={query}
           onChange={(e) => {
-            e.preventDefault();
+            // e.preventDefault();
             setQuery(e.target.value);
           }}
         />
         <button
           onClick={(e) => {
-            e.preventDefault();
+            // e.preventDefault();
             setIsLoading(true);
             $(".documents").html("");
           }}
@@ -86,26 +88,23 @@ const Search = ({ title }) => {
       {showAccLat && (
         <div className="accuracy-latest-btns container">
           <button
+            className="accuracy"
             onClick={() => {
               setSort("accuracy");
-              setIsLoading(true);
-
               $(".accuracy").css(clicked);
               $(".latest").css(notClicked);
             }}
-            className="accuracy"
           >
             Accuracy
           </button>
           <button
+            className="latest"
             onClick={() => {
               setSort("latest");
-              setIsLoading(true);
 
               $(".latest").css(clicked);
               $(".accuracy").css(notClicked);
             }}
-            className="latest"
           >
             Latest
           </button>
@@ -157,7 +156,7 @@ const Search = ({ title }) => {
       <Footer />
     </MainContainer>
   );
-};
+}
 export default Search;
 
 // BOOKS API

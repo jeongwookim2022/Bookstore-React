@@ -66,7 +66,7 @@ export const BooksContents = styled.div`
     cursor: pointer;
   }
   .title-author {
-    margin-top: 10px;
+    margin-top: 8px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -74,6 +74,7 @@ export const BooksContents = styled.div`
   h1 {
     width: 125px;
     font-size: 16px;
+    margin-bottom: 5px;
   }
   h3 {
     width: 125px;
@@ -215,7 +216,7 @@ export const BookRecommendationBox = styled.div`
   .book-wrapper {
     width: 90%;
     height: 100%;
-      margin-top: 20px;
+    margin-top: 20px;
 
     .book-img-box {
     border-radius: 10px;
@@ -230,10 +231,13 @@ export const BookRecommendationBox = styled.div`
     }
   }
   .title-author{
+    margin-top: 6px;
     h1 {
       font-size: 16px;
+      margin-bottom: 5px;
     }
     h3 {
+      
       font-size: 13px;
       color: gray;
     }

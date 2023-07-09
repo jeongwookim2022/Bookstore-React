@@ -43,9 +43,8 @@ function BestSeller() {
       <BorderBottomG className="container" />
       <BooksBox className="container">
         {books.map((book, i) => (
-          <BooksContents>
+          <BooksContents key={i}>
             <Books
-              key={i}
               title={book.title}
               image={book.thumbnail}
               author={book.authors}

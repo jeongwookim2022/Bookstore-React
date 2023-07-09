@@ -2,16 +2,26 @@ import {
   faBook,
   faBookOpen,
   faCircleUser,
+  faCrown,
+  faTree,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import $ from "jquery";
 
 function HeaderMobileContent() {
   const [isOpen, setOpen] = useState(false);
   const togglenNav = () => {
     setOpen((isOpen) => !isOpen);
+  };
+  const navigate = useNavigate();
+
+  const toBestSeller = () => {
+    window.scrollTo({ top: 1250, behavior: "smooth" });
+  };
+  const toCategory = () => {
+    window.scrollTo({ top: 2110, behavior: "smooth" });
   };
 
   return (
@@ -40,8 +50,16 @@ function HeaderMobileContent() {
             />
           )}
         </div>
-        <div>
-          <Link to="/" className="link">
+        <div className="viking-crown-tree-title">
+          <FontAwesomeIcon icon={faCrown} className="crown" />
+          <FontAwesomeIcon icon={faTree} className="tree" />
+          <Link
+            className="link"
+            onClick={() => {
+              navigate("/");
+              window.location.reload();
+            }}
+          >
             <h1>Viking Books</h1>
           </Link>
         </div>
@@ -54,12 +72,22 @@ function HeaderMobileContent() {
       {/* OPEN NAVs */}
       <div className="open-links">
         <p>
-          <Link to="" className="link">
+          <Link
+            className="link"
+            onClick={() => {
+              toBestSeller();
+            }}
+          >
             BesteSeller
           </Link>
         </p>
         <p>
-          <Link to="" className="link">
+          <Link
+            className="link"
+            onClick={() => {
+              toCategory();
+            }}
+          >
             Category
           </Link>
         </p>

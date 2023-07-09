@@ -88,10 +88,32 @@ export const HeaderMobile = styled.header`
       }
       .link {
         text-decoration: none;
-        color: gray;
+        color: black;
       }
       .link .icon {
         color: black;
+      }
+    }
+
+    .viking-crown-tree-title {
+      position: relative;
+      cursor: default;
+
+      .crown {
+        position: absolute;
+        top: 16px;
+        left: 1.5px;
+
+        color: gold;
+      }
+      .tree {
+        position: absolute;
+        top: 30px;
+        right: -31px;
+
+        font-size: 33px;
+
+        color: green;
       }
     }
   }
@@ -122,16 +144,16 @@ export const HeaderPCnavbarWrapper = styled.div`
     justify-content: center;
     background-color: yellowgreen;
     border: 5px solid yellowgreen;
-    padding: 5px;
+    padding: 3px;
 
-    div {
+    h5 {
       width: 13.5%;
       justify-content: center;
+      cursor: pointer;
     }
-    div:nth-child(1) {
-      color: red;
+    h5:nth-child(1) {
     }
-    div:last-child {
+    h5:last-child {
       width: 16.5%;
     }
   }

@@ -9,7 +9,7 @@ import {
   BooksContents,
 } from "../styles/BookStyles";
 
-function BooksLanguage() {
+function BooksDepressed() {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
@@ -18,7 +18,7 @@ function BooksLanguage() {
 
   const findBooks = async () => {
     const params = {
-      query: "Learn Korean",
+      query: "Feeling better",
       sort: "",
       size: "8",
       target: "",
@@ -34,7 +34,7 @@ function BooksLanguage() {
     <>
       <BookSection className="container">
         <TitleEach>
-          <h2>Learn Korean language</h2>
+          <h2>Depressed? Read these</h2>
           <h1>
             <span className="plus-text">+</span>
           </h1>
@@ -56,4 +56,4 @@ function BooksLanguage() {
   );
 }
 
-export default BooksLanguage;
+export default BooksDepressed;

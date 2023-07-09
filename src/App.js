@@ -5,7 +5,6 @@ import Loading from "./components/Loading";
 import { Routes, Route, Link, useNavigate, Outlet } from "react-router-dom";
 import Header from "./components/Header";
 import MainPage from "./routes/MainPage";
-import Footer from "./components/Footer";
 import SignUp from "./routes/SignUp";
 import SignIn from "./routes/SignIn";
 

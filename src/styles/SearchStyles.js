@@ -45,10 +45,11 @@ export const MainContainer = styled.div`
     margin-top: 60px;
     button {
       border-radius: 10px;
-      padding: 7px;
+      padding: 6px;
       color: white;
       border: 1px solid green;
       background-color: green;
+      margin-left: -9px;
     }
     input {
       width: 300px;
