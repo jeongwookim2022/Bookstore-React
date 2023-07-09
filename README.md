@@ -1,7 +1,7 @@
 # React Online Book Store App
 ## Click: [DEMO](https://vikingbooks.netlify.app/)
 
-### #React #Html5 #CSS #SCSS #Javascript(ES6) #Redux.js #Styled-Components #
+### #React #Html5 #CSS #SCSS #Javascript(ES6) #Redux.js #Styled-Components #React-query
 ### 1. Main page(Desktop)
 - By Clicking Navbar, scroll goes down to the corresponding Book Section.
 - Icons links the pages; search page, sign up & in pages.
